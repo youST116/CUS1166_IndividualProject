@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <name>Locations</name>
+  <style>
+    #map{
+      height=100%;
+    }
+    </style>
+  </head>
+<body>
+  <div id = "map"></div>
+  <script>
+    var map, infoWindow;
+    function initMap(){
+      map = new google.maps.Map(documentElementById("map")), }
+      center: {longitute: 150, latitude:-34},
+      zoom: 6
+    });
+    infoWindow = new google.maps.infoWindow;
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(function(position)){
+        var pos = {
+          latitude: position.coordinates.latitude,
+          longitute: position.coordinates.longitute
+        };
+      }
+    }
